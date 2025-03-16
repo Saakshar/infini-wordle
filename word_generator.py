@@ -8,8 +8,8 @@ class file_gen():
         d = webdriver.Chrome(options=self.options)
         d.get(f"https://www.wordsdetail.com/{num}-letter-words/")
         words=d.find_elements(By.CSS_SELECTOR, "ul li")
-        with open(f"words({num}).csv","w") as file:
-            file.write("")
+        # with open(f"words({num}).csv","w") as file:
+        #     file.write("")
         with open(f"words({num}).csv", "a") as file:
             for word in words:
                 try:
@@ -24,8 +24,8 @@ class file_gen():
         d = webdriver.Chrome(options=self.options)
         d.get(f"https://byjus.com/english/{num}-letter-words/")
         words = d.find_elements(By.CSS_SELECTOR, "tr td")
-        with open(f"words({num})^#.csv", "w") as file:
-            file.write("")
+        # with open(f"words({num})^#.csv", "w") as file:
+        #     file.write("")
         with open(f"words({num})^#.csv", "a") as file:
             for word in words:
                 try:
