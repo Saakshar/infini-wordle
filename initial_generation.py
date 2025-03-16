@@ -125,9 +125,9 @@ class Gen:
         self.btn.grid(row=7, column=0, columnspan=24)
         self.alphabet=["Q","W","E","R",'T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M']
         self.alpha={}
+        self.alpha2 = {}
         for i in range(0,26):
             self.gen_alpha(i)
-        self.alpha2=self.alpha
     def soft_gen(self):
         self.ez=True
         self.igen0()
@@ -148,6 +148,7 @@ class Gen:
     def gen_alpha(self,col):
         new_keyboard_letter=Label(text=self.alphabet[col],background='light gray',font=("arial",6))
         self.alpha[self.alphabet[col]]=new_keyboard_letter
+        self.alpha2[self.alphabet[col]] = new_keyboard_letter
         col+=1
         row=8
         for i in range(0,2):
@@ -189,7 +190,7 @@ class Gen:
                             temp_word_characterization[guess[i].lower()]=temp_word_characterization[guess[i].lower()][:-1]
                             self.placements[self.current_row][i].config(background="yellow")
                             try:
-                                self.alpha[guess[i].upper()].config(background="yellow")
+                                self.alpha2[guess[i].upper()].config(background="yellow")
                                 self.alpha2[guess[i].upper()] = "null"
                             except:
                                 pass
