@@ -11,6 +11,7 @@ class Gen:
         self.label.grid(row=0,column=1,columnspan=2)
         self.length=Entry()
         self.length.grid(row=1,column=1,columnspan=2)
+        self.length.focus_set()
         self.easy = Button(text="Easy", command=self.soft_gen,width=15,background="green")
         self.easy.grid(row=2, column=1)
         self.hard=Button(text="Hard",command=self.igen0,width=15,background="red")
@@ -121,6 +122,7 @@ class Gen:
             self.gen(i,num2)
         self.input = Entry()
         self.input.grid(row=6, column=0, columnspan=24)
+        self.input.focus_set()
         self.btn = Button(text="Submit Guess", command=self.guess)
         self.btn.grid(row=7, column=0, columnspan=24)
         self.alphabet=["Q","W","E","R",'T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M']
